@@ -28,7 +28,7 @@ const Home = () => {
 	];
 
 	return(
-		<div>
+		<div className="home">
 			<div className="navigation">
 				{nav_array.map((item, i) => {
 					return(

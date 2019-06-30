@@ -9,6 +9,34 @@ $mobile: "(max-width: 767px)";
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 768px)";
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+@mixin custom-color() {
+  &--sum{
+    background-color: $primary-color;
+  }
+  &--multiply{
+    background-color: $secondary-color;
+  }
+  &--prime{
+    background-color: $third-color;
+  }
+  &--fibonacci{
+    background-color: $fourth-color;
+  }
+}
+
+@mixin padding-lr(){
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 a{
   text-decoration: none;
 }
@@ -42,22 +70,95 @@ a{
   justify-content: center;
   flex-direction: column;
   color: white;
-  &--sum{
-    background-color: $primary-color;
-  }
-  &--multiply{
-    background-color: $secondary-color;
-  }
-  &--prime{
-    background-color: $third-color;
-  }
-  &--fibonacci{
-    background-color: $fourth-color;
-  }
+  @include padding-lr();
+  @include custom-color();
   h2{
     margin: 0;
   }
 }
+
+//Content style
+.content{
+  @include custom-color();
+  @include padding-lr();
+  color: white;
+  font-size: 17px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  h1{
+    flex-grow: 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .content__container{
+    flex-grow: 2;
+  }
+  .content__button{
+    flex-grow: 0;
+    padding-bottom: 35px;
+    text-align: center;
+  }
+}
+
+.tagline{
+  display: block;
+  text-align: center;
+}
+
+.summary{
+  display: flex;
+  height: 94%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .summary__top{
+    input{
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      border: 0px;
+      font-size: 25px;
+      text-align: center;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    .operator{
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 35px;
+    }
+  }
+
+  .summary__bottom{
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.button{
+  color: inherit;
+  font-size: 18px;
+  padding: 15px 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  @include custom-color();
+  &--operation{
+    padding: 5px 25px;
+    background-color: white;
+    display: block;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
 
 //Not found style
 .no-match{
@@ -71,18 +172,6 @@ a{
   font-size: 40px;
   h1{
     margin: 0;
-  }
-  a{
-    color: inherit;
-    font-size: 18px;
-    background-color: $fourth-color;
-    padding: 15px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 50px;
-    margin-top: 20px;
-    font-weight: bold;
-    cursor: pointer;
   }
 }
 

@@ -6,21 +6,21 @@ import {
 } from 'react-router-dom';
 
 import './App.scss';
-import Multiply from './components/Multiply';
+import Content from './components/Content';
 import Home from './components/Home';
 import NoMatch from './components/NoMatch';
 
 const App = () => {
+	const route_pattern = ':pathName(sum|multiply|prime|fibonacci)';
   return (
 	  <Router>
 	    <div className="App">
 	      <div className="container">
 		      <Switch>
-			      <Route path="/multiply" component={Multiply}/>
+			      <Route path={`/${route_pattern}`} component={Content}/>
 			      <Route exact path="/" component={Home} />
 			      <Route component={NoMatch}/>
 		      </Switch>
-
 	      </div>
 	    </div>
 	  </Router>

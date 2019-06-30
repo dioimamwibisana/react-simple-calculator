@@ -1,12 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+
+import Button from './Button';
 
 const NoMatch = () => {
 	return(
 		<div className="no-match">
 			<h1>Oops</h1>
 			<small>Nothing to see here</small>
-			<Link to={`/`}>Back to reality</Link>
+			<Button
+				text={`Back to reality`}
+				custom_color={`fibonacci`}
+				link={`/`}
+			/>
 		</div>
 	)
 };
