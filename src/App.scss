@@ -1,7 +1,13 @@
+// Color variable
 $primary-color: #89DA59;
 $secondary-color: #80BD9E;
 $third-color: #FF420E;
 $fourth-color: #F98866;
+
+// Width screen variable
+$mobile: "(max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 768px)";
 
 a{
   text-decoration: none;
@@ -13,7 +19,11 @@ a{
 
 .container{
   margin: 0 auto;
-  width: 360px;
+  width: 100%;
+  @media #{$desktop} {
+    width: 360px;
+  }
+
 }
 
 .navigation{
@@ -23,13 +33,14 @@ a{
 }
 
 .nav{
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
   flex: 1 1 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: white;
   &--sum{
     background-color: $primary-color;
@@ -42,6 +53,9 @@ a{
   }
   &--fibonacci{
     background-color: $fourth-color;
+  }
+  h2{
+    margin: 0;
   }
 }
 

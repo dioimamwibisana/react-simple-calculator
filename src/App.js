@@ -1,7 +1,6 @@
 import React from 'react';
 import {
 	BrowserRouter as Router,
-	Link,
 	Switch,
 	Route
 } from 'react-router-dom';
@@ -19,13 +18,6 @@ const App = () => {
 			      <Route path="/multiply" component={Multiply}/>
 			      <Route exact path="/" component={Home} />
 		      </Switch>
-
-
-
-		      {/**/}
-		      {/*<Route path="/" component={Home} />*/}
-		      {/*<Route path="/about" component={About}/>*/}
-		      {/*<Route path="/:user" component={User}/>*/}
 		      {/*<Route component={NoMatch}/>*/}
 	      </div>
 	    </div>
