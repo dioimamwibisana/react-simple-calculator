@@ -30,6 +30,10 @@ input[type=number]::-webkit-outer-spin-button {
   &--fibonacci{
     background-color: $fourth-color;
   }
+  &--black{
+    background-color: white;
+    color: #000;
+  }
 }
 
 @mixin padding-lr(){

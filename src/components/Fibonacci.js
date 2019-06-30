@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react';
 
-import {sum} from '../utils';
+import {fibonacci_series} from '../utils';
 
-class Sum extends Component{
+class Fibonacci extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -18,7 +18,7 @@ class Sum extends Component{
 			result: 0,
 			first_number: 0,
 			second_number: 0
-		})
+		});
 		event.preventDefault();
 	}
 
@@ -34,25 +34,20 @@ class Sum extends Component{
 
 	handleSubmit(event) {
 		let first_number = parseInt(this.state.first_number);
-		let second_number = parseInt(this.state.second_number);
-		let result_sum = sum(first_number, second_number);
+		let f_series = fibonacci_series(first_number);
 		this.setState({
-			result: result_sum
+			result: f_series.join(',')
 		});
 		event.preventDefault();
 	}
 	render() {
 		let first_number = this.state.first_number;
-		let second_number = this.state.second_number;
 		return(
 			<Fragment>
-				<span className="tagline">Sum X & Y, and print the result</span>
+				<span className="tagline">Find first N Fibonacci sequence, and print the result</span>
 				<form className="summary" onSubmit={this.handleSubmit}>
 					<div className="summary__top">
-						<input className="input--left" name="first_number" value={first_number} onChange={this.handleInputChange} type="number"/>
-						<span className="operator">+</span>
-						<input className="input--right" name="second_number" value={second_number} onChange={this.handleInputChange} type="number"/>
-					</div>
+						<input className="input--left" name="first_number" value={first_number} onChange={this.handleInputChange} type="number"/></div>
 					<div className="summary__bottom">
 						<input className="button button--operation" type="submit" value="Go" />
 						<span className="result">Result:<br/>{this.state.result}</span>
@@ -66,4 +61,4 @@ class Sum extends Component{
 	}
 };
 
-export default Sum;
+export default Fibonacci;
