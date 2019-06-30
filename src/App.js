@@ -1,7 +1,7 @@
 import React from 'react';
 import {
 	BrowserRouter as Router,
-	NavLink,
+	Link,
 	Switch,
 	Route
 } from 'react-router-dom';
@@ -12,22 +12,24 @@ import Home from './components/Home';
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="container">
-	      <Router>
-		      <NavLink to="/">Home</NavLink>
-	        <NavLink to="/multiply">Multiply</NavLink>
-
+	  <Router>
+	    <div className="App">
+	      <div className="container">
 		      <Switch>
 			      <Route path="/multiply" component={Multiply}/>
-			      <Route path="/" component={Home} />
-			      {/*<Route path="/about" component={About}/>*/}
-			      {/*<Route path="/:user" component={User}/>*/}
-			      {/*<Route component={NoMatch}/>*/}
+			      <Route exact path="/" component={Home} />
 		      </Switch>
-	      </Router>
-      </div>
-    </div>
+
+
+
+		      {/**/}
+		      {/*<Route path="/" component={Home} />*/}
+		      {/*<Route path="/about" component={About}/>*/}
+		      {/*<Route path="/:user" component={User}/>*/}
+		      {/*<Route component={NoMatch}/>*/}
+	      </div>
+	    </div>
+	  </Router>
   );
 }
 

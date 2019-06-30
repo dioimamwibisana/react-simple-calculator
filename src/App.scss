@@ -1,14 +1,48 @@
 $primary-color: #89DA59;
+$secondary-color: #80BD9E;
+$third-color: #FF420E;
+$fourth-color: #F98866;
+
+a{
+  text-decoration: none;
+}
 
 .App {
-  background-color: $primary-color;
   width: 100%;
-  min-height: 100vh;
 }
 
 .container{
   margin: 0 auto;
   width: 360px;
+}
+
+.navigation{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.nav{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  &--sum{
+    background-color: $primary-color;
+  }
+  &--multiply{
+    background-color: $secondary-color;
+  }
+  &--prime{
+    background-color: $third-color;
+  }
+  &--fibonacci{
+    background-color: $fourth-color;
+  }
 }
 
 
