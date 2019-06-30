@@ -8,6 +8,7 @@ import {
 import './App.scss';
 import Multiply from './components/Multiply';
 import Home from './components/Home';
+import NoMatch from './components/NoMatch';
 
 const App = () => {
   return (
@@ -17,8 +18,9 @@ const App = () => {
 		      <Switch>
 			      <Route path="/multiply" component={Multiply}/>
 			      <Route exact path="/" component={Home} />
+			      <Route component={NoMatch}/>
 		      </Switch>
-		      {/*<Route component={NoMatch}/>*/}
+
 	      </div>
 	    </div>
 	  </Router>
