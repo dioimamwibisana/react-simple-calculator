@@ -135,6 +135,12 @@ a{
   .summary__bottom{
     text-align: center;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    .result{
+      font-size: 22px;
+      font-weight: bold;
+    }
   }
 }
 

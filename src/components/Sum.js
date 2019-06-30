@@ -51,13 +51,12 @@ class Sum extends Component{
 				<form className="summary" onSubmit={this.handleSubmit}>
 					<div className="summary__top">
 						<input className="input--left" name="first_number" value={first_number} onChange={this.handleInputChange} type="number"/>
-						<span className="operator">X</span>
+						<span className="operator">+</span>
 						<input className="input--right" name="second_number" value={second_number} onChange={this.handleInputChange} type="number"/>
 					</div>
 					<div className="summary__bottom">
-						<input className="button button--operation" type="submit" value="Go" style={{textAlign: 'center'}} />
-						<span>Result:</span>
-						<span>{this.state.result}</span>
+						<input className="button button--operation" type="submit" value="Go" />
+						<span className="result">Result:<br/>{this.state.result}</span>
 						{this.state.result !== 0 ? (
 							<span className="button button--operation" onClick={this.clearInput}>Clear</span>
 						) : null}
